@@ -1,0 +1,214 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/*head以及head下所有css*/
+
+header {
+    width: 100%;
+    height: 90px;
+    background-image: url(images/bg.png);
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+    /*
+    flex-wrap: wrap;
+    align-items: center;
+    */
+}
+
+header img {
+    width: 90px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: -200px;
+    /*
+    align-self: flex-start;
+    */
+}
+
+header div {
+    font-family: "STXingKai";
+    color: white;
+    line-height: 90px;
+}
+
+header .title {
+    font-size: 2.5em;
+    margin-left: -600px;
+    /*
+    align-self: flex-start;
+    */
+}
+
+header .helpAndQuit {
+    margin-right: -100px;
+    /*
+    align-self:flex-end;
+    */
+}
+
+.mainPanel {}
+
+.contents {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftPanel {
+    background-color: #F0F0F0;
+    width: 180px;
+    height: 300px;
+}
+
+.rightPanel {
+    width: 100%;
+    height: 300px;
+}
+
+/*左侧菜单css*/
+
+.asideSelection {
+    text-align: center;
+    width: 180px;
+    height: 35px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px gray;
+}
+
+.asideSelection a{
+    text-decoration: none;
+    color: black;
+}
+
+.asideSelection:hover {
+    background-color: #C3C3C3;
+}
+
+.left-img {
+    position: absolute;
+    bottom: 50px;
+}
+/*右侧表格*/
+
+.myList-table {
+    margin-top: 20px;
+    width: 850px;
+    margin-left: 35px;
+    border-left: 1px solid #F3F3F3;
+    border-top: 1px solid #F3F3F3;
+}
+
+.myList-table thead {
+    background-color: #f0f0f0;
+}
+
+.myList-table td {
+    height: 30px;
+    border-right: 1px solid #F3F3F3;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.myList-table tbody a {
+    text-decoration: none;
+}
+
+/*右侧查询按钮*/
+
+.myList-query {
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+.myList-query button {
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.myList-query input {
+    height: 23px;
+}
+
+/*footer*/
+
+footer {
+    text-align: center;
+    font-family: "STXingKai";
+}
+
+/*右侧表单*/
+
+.form-title {
+    text-align: center;
+    font-size: 1.3em;
+    margin: 10px 0 10px 0;
+    padding-bottom: 20px;
+}
+
+.myForm {
+    /*width: 850px;*/
+    margin-left: 35px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.myForm div {
+    margin-bottom: 20px;
+}
+
+.myForm-msg{
+    margin-top: -5px;
+}
+
+.myForm-msg input {
+    width: 350px;
+    height: 25px;
+    box-shadow: 0;
+}
+
+.myForm-msg select {
+    width: 350px;
+    height: 25px;
+    box-shadow: 0;
+}
+
+.myForm-btn {
+    margin-top: -60px;
+    text-align: center;
+}
+
+.myForm-btn input {
+    width: 80px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+.myForm-contents {
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.myAvatar {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.myAvatar img {
+    width: 180px;
+    height: 180px;
+    border: solid 1px #F5F5F5;
+    border-radius: 5px;
+}
+
+.myAvatar input {
+    width: 180px;
+    height: 30px;
+    margin-bottom: 20px border:solid 1px #F5F5F5;
+    background-color: #F5F5F5;
+}

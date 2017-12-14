@@ -1,44 +1,53 @@
 package com.qingshixun.project.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="cp9_user")
-public class User {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+@Table(name = "cp9_user")
+public class User extends BaseModel {
 
 	private String username;
-	
+
 	private String password;
-	
+
 	private String email;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date birthday;
-	
+
 	private String gender; // 性別
-	
-	private String profession; // 职业
-	
-	private String hobbies; //兴趣爱好
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "profession")
+	private Profession profession; // 职业
+
+	@ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinTable(name = "cp9_user_hobby", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "hobby_id") })
+	private Set<Hobby> hobbies = new HashSet<>(); // 兴趣爱好
 
 	public User() {
 		super();
 	}
 
-	public User(String username, String password, String email, Date birthday, String gender, String profession,
-			String hobbies) {
+	public User(String username, String password, String email, Date birthday, String gender, Profession profession,
+			Set<Hobby> hobbies) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -47,19 +56,6 @@ public class User {
 		this.gender = gender;
 		this.profession = profession;
 		this.hobbies = hobbies;
-	}
-
-	public User(int id) {
-		super();
-		this.id = id;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getUsername() {
@@ -102,27 +98,26 @@ public class User {
 		this.gender = gender;
 	}
 
-	public String getProfession() {
+	public Profession getProfession() {
 		return profession;
 	}
 
-	public void setProfession(String profession) {
+	public void setProfession(Profession profession) {
 		this.profession = profession;
 	}
 
-	public String getHobbies() {
+	public Set<Hobby> getHobbies() {
 		return hobbies;
 	}
 
-	public void setHobbies(String hobbies) {
+	public void setHobbies(Set<Hobby> hobbies) {
 		this.hobbies = hobbies;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", birthday=" + birthday + ", gender=" + gender + ", profession=" + profession + ", hobbies="
-				+ hobbies + "]";
+		return "User [username=" + username + ", password=" + password + ", email=" + email + ", birthday=" + birthday
+				+ ", gender=" + gender + ", profession=" + profession + ", hobbies=" + hobbies + "]";
 	}
-	
+
 }

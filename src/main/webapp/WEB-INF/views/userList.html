@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="plugins/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mainPanel">
+        <header style="background-image: url(images/bg.png);">
+            <img src="images/logo.png">
+            <div class="title">用户管理系统</div>
+            <div class="helpAndQuit">帮助&emsp;退出</div>
+        </header>
+        <div class="contents">
+            <aside class="leftPanel">
+                <label><div class="asideSelection"><a href="userList.html">用户查询</a></div></label>
+                <label><div class="asideSelection"><a href="userForm.html">用户新增</a></div></label>
+                <img class="left-img" src="images/p1.png">
+            </aside>
+            <div class="rightPanel">
+                <div class="myList-query">
+                    <label>用户名称：</label>
+                    <input type="text" name="" required="true">
+                    <button type="submit" name="" id="myList-query">查询</button>
+                </div>
+                <table class="myList-table" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="">用户名称
+                            </td>
+                            <td>
+                                职业
+                            </td>
+                            <td>
+                                邮箱
+                            </td>
+                            <td>
+                                性别
+                            </td>
+                            <td>
+                                特长
+                            </td>
+                            <td>
+                                操作
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="">轻实训
+                            </td>
+                            <td>
+                                学生
+                            </td>
+                            <td>
+                                tiger@shixun.online
+                            </td>
+                            <td>
+                                男
+                            </td>
+                            <td>
+                                书法、乐器
+                            </td>
+                            <td>
+                                <a href="">编辑</a>
+                                <a href="">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="">王宇宙
+                            </td>
+                            <td>
+                                程序猿
+                            </td>
+                            <td>
+                                mike@qingshixun.com
+                            </td>
+                            <td>
+                                男
+                            </td>
+                            <td>
+                                运动
+                            </td>
+                            <td>
+                                <a href="">编辑</a>
+                                <a href="">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="">张丽丽
+                            </td>
+                            <td>
+                                UI设计
+                            </td>
+                            <td>
+                                jessie@google.com
+                            </td>
+                            <td>
+                                女
+                            </td>
+                            <td>
+                                音乐
+                            </td>
+                            <td>
+                                <a href="">编辑</a>
+                                <a href="">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer>Copyright @ 2017.轻实训版权所有</footer>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        // 根据当前页面获取分辨率后设置高度
+        $('.leftPanel').height($(window).height() - 130);
+        $('.rightPanel').height($(window).height() - 130);
+        // 设置左侧图片始终在浏览器底部 
+        $('.left-img').css({ "margin-bottom": "0px" });
+    });
+    </script>
+</body>
+
+</html>

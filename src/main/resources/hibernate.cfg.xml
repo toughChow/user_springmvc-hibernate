@@ -10,6 +10,6 @@
     	<property name="hbm2ddl.auto">update</property>
 		<!-- 实体定义 -->
 		<mapping class="com.qingshixun.project.model.User" />
-    	
+		<mapping class="com.qingshixun.project.model.Admin" />
     </session-factory>
 </hibernate-configuration>
